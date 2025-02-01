@@ -1,0 +1,22 @@
+power.r2 = c(0.050 , 0.051 , 0.054 , 0.062 , 0.082 , 0.093 , 0.118 , 0.139 , 0.158 , 0.185 , 0.218 , 0.267 , 0.312 , 0.349 , 0.389 , 0.434 , 0.474 , 0.514 , 0.555 , 0.596 , 0.631 , 0.678 , 0.712 , 0.755 , 0.797 , 0.819 , 0.855 , 0.882 , 0.899 , 0.914 , 0.931)
+
+power.r3 = c(0.050 , 0.052 , 0.060 , 0.070 , 0.088 , 0.115 , 0.144 , 0.181 , 0.226 , 0.279 , 0.335 , 0.399 , 0.451 , 0.503 , 0.560 , 0.614 , 0.662 , 0.709 , 0.760 , 0.793 , 0.832 , 0.852 , 0.881 , 0.899 , 0.917 , 0.929 , 0.947 , 0.960 , 0.969 , 0.977 , 0.982)
+
+power.r4 = c(0.050 , 0.053 , 0.064 , 0.080 , 0.098 , 0.124 , 0.160 , 0.188 , 0.244 , 0.301 , 0.354 , 0.406 , 0.458 , 0.513 , 0.567 , 0.623 , 0.672 , 0.713 , 0.768 , 0.800 , 0.839 , 0.871 , 0.896 , 0.913 , 0.932 , 0.946 , 0.961 , 0.970 , 0.976 , 0.981 , 0.989)
+
+power.r5 = c(0.050 , 0.056 , 0.065 , 0.083 , 0.103 , 0.129 , 0.173 , 0.209 , 0.254 , 0.306 , 0.361 , 0.417 , 0.481 , 0.535 , 0.584 , 0.656 , 0.699 , 0.747 , 0.786 , 0.824 , 0.860 , 0.892 , 0.921 , 0.933 , 0.950 , 0.961 , 0.969 , 0.974 , 0.979 , 0.984 , 0.994)
+
+theta = 0:30
+
+par(mar = c(5.4, 4, 2, 2.2), xpd = TRUE)
+plot(theta, power.r2, xlim=c(theta[1],theta[length(theta)]), ylim=c(0,1), type="l", pch=3, col="red", xlab=expression(theta), ylab=expression(Power))
+# Add a line
+lines(theta, power.r3, xlim=c(theta[1],theta[length(theta)]), ylim=c(0,1), pch=3, col="blue", type="l")
+# Add a line
+lines(theta, power.r4, xlim=c(theta[1],theta[length(theta)]), ylim=c(0,1), pch=3, col="green", type="l")
+# Add a line
+lines(theta, power.r5, xlim=c(theta[1],theta[length(theta)]), ylim=c(0,1), pch=3, col="black", type="l")
+# Add a legend
+legend("bottomright",
+       c(expression(paste('r==2'),paste('r==3'),paste('r==4'),paste('r==5'))),
+       fill=c("red","blue","green","black"))
